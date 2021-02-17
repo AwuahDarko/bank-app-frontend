@@ -92,13 +92,7 @@
         <button class="btn btn-success">Open and account</button>
       </div>
       <div class="auth-container">
-        <div class="card">
-          <h4>Welcome</h4>
-          <button class="btn btn-blue">Sign In</button>
-          <p class="text-blue mt-2 enroll-text">
-            Not enrolled? Sign up now. <i class="fa fa-angle-right arrow"></i>
-          </p>
-        </div>
+        <SignIn />
       </div>
     </section>
 
@@ -112,7 +106,6 @@
           <VueSlickCarousel
             v-bind="slide_settings"
             ref="carousel"
-            :responsive="true"
             :arrows="false"
             :dots="true"
             :variableWidth="false"
@@ -343,7 +336,6 @@
       <div class="testimonials">
         <VueSlickCarousel
           :autoplay="true"
-          :responsive="true"
           :arrows="false"
           :dots="true"
           :variableWidth="false"
@@ -533,6 +525,8 @@
 import DropdownMenu from "@innologica/vue-dropdown-menu";
 import { Slide } from "vue-burger-menu";
 import VueSlickCarousel from "vue-slick-carousel";
+import { network } from "../utils/network";
+import SignIn from "../components/SignIn.vue";
 
 export default {
   name: "Home",
@@ -541,6 +535,7 @@ export default {
     DropdownMenu,
     Slide,
     VueSlickCarousel,
+    SignIn,
   },
   data() {
     return {
@@ -568,6 +563,17 @@ export default {
     slidePrev() {
       this.$refs.carousel.next();
     },
+  },
+  created() {
+    // network.makeGETRequest("/test-server").then((data) => {
+    //   console.log(data);
+    // });
+    const body = {
+      token: "hsgdsg",
+    };
+    network.makePOSTRequest("/auth-token", body).then((data) => {
+      console.log(data);
+    });
   },
 };
 </script>
@@ -737,13 +743,6 @@ a.nav-link:hover {
 .auth-container {
   flex: 2;
   align-self: center;
-}
-
-.auth-container .card {
-  width: 60%;
-  margin: auto;
-  height: 70%;
-  padding: 2rem 2rem 0.5rem 2rem;
 }
 
 .enroll-text {
