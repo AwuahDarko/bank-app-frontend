@@ -4,7 +4,7 @@
       <h4 v-if="is_logged_in">Welcome</h4>
       <h4 v-else>Sign in now</h4>
       <button v-if="is_logged_in" class="btn btn-blue">Sign In</button>
-      <form class="mt-2" v-else>
+      <form class="mt-2" v-else @submit="onFormSubmit">
         <input
           type="number"
           name="userId"
@@ -12,27 +12,28 @@
           class="form-control mb-2"
           placeholder="Enter your user ID"
           required
+          v-model="user_id"
           @keypress="Utility.allowOnlyNumberInput2($event)"
         />
         <input
-          type="number"
+          type="text"
           name="pin"
           id="pin"
           class="form-control mb-2"
           placeholder="Enter your pin"
           required
-          @keypress="Utility.allowOnlyNumberInput2($event)"
+          v-model="pin"
         />
         <div class="bk-row bk-align-right">
           <button type="submit" class="btn btn-primary" :disabled="disable_btn">
-            <img v-if="loading" src="" alt="loading..." />
+            <img v-if="loading" class="loading-on-btn" src="../assets/logo.png" alt="loading..." />
             Sign In
           </button>
         </div>
       </form>
-      <p class="text-blue mt-2 enroll-text">
+      <router-link to="/register-one" class="text-blue mb-2 enroll-text">
         Not enrolled? Sign up now. <i class="fa fa-angle-right arrow"></i>
-      </p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -41,29 +42,52 @@
 
 <script>
 import { Utility } from "../utils/utility";
+import { network } from "../utils/network";
 
 export default {
   name: "SignIn",
   props: {
-    msg: String,
+    is_logged_in: Boolean,
   },
   components: {},
   data() {
     return {
-      is_logged_in: true,
       Utility: Utility,
       loading: false,
       disable_btn: false,
+      user_id: "",
+      pin: "",
     };
   },
-  methods: {},
-  computed: {},
-  created() {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      this.is_logged_in = false;
-    }
+  methods: {
+    onFormSubmit(evt) {
+      evt.preventDefault();
+      console.log(this.pin, this.user_id);
+
+      const body = {
+        user_id: this.user_id,
+        pin: this.pin,
+      };
+
+      this.loading = true;
+      this.disable_btn = true;
+      network
+        .makePOSTRequest("/user-login", body)
+        .then((res) => {
+          this.$emit("onMessage", res.data.message);
+          this.loading = false;
+          this.disable_btn = false;
+          
+        })
+        .catch((err) => {
+          console.log(err);
+          this.loading = false;
+          this.disable_btn = false;
+        });
+    },
   },
+  computed: {},
+  created() {},
 
   mounted() {},
 };

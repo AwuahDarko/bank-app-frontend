@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import MapState from './modules/MapState';
+import Snackbar from './modules/snackbar';
+
+
+
 
 Vue.use(Vuex);
 
@@ -9,6 +12,6 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    // MapState,
+    Snackbar,
   }
 });

@@ -61,11 +61,11 @@ function lazyLoad(view) {
 }
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
+  // {
+  //   path: "/",
+  //   name: "Home",
+  //   component: Home
+  // },
   {
     path: "/about",
     name: "About",
@@ -76,9 +76,24 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/about",
-    name: "About",
-    component: lazyLoad("About")
+    path: "/",
+    name: "Home",
+    component: lazyLoad("Home")
+  },
+  {
+    path: "/sign-up",
+    name: "SignUp",
+    component: lazyLoad("SignUp")
+  },
+  {
+    path: "/register-one",
+    name: "RegisterOne",
+    component: lazyLoad("RegisterOne")
+  },
+  {
+    path: "/register-two",
+    name: "RegisterTwo",
+    component: lazyLoad("RegisterTwo")
   }
 ];
 
