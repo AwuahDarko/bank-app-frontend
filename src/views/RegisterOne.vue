@@ -152,13 +152,12 @@ select:focus {
 }
 
 select {
-
     padding: 8px 10px;
     border: none;
 }
 
 input[type='text']::placeholder,
-input[type='email']::placeholder {
+input[type='email']::placeholder,select  {
     font-size: 0.9rem;
     color: rgb(167, 165, 165);
 }
@@ -175,12 +174,12 @@ input[type='email']::placeholder {
     background: rgb(56, 114, 241);
 }
 
-/* .bk-btn:hover {
+ /* .bk-btn:hover {
     background: linear-gradient(to bottom, #55b6e1 0%, #55b6e1 100%);
     border-color: #55b6e1;
     background: rgb(56, 114, 241); 
 
-} */
+}  */
 
 @media(max-width: 768px) {
     .small-width {

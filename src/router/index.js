@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // ? === views ====== 
 import Home from "../views/Home.vue";
+import Account from '../views/Account.vue'
 
 Vue.use(VueRouter);
 
@@ -56,6 +57,7 @@ Vue.use(VModal, {
 });
 
 
+
 function lazyLoad(view) {
   return () => import(`@/views/${view}.vue`);
 }
@@ -94,6 +96,16 @@ const routes = [
     path: "/register-two",
     name: "RegisterTwo",
     component: lazyLoad("RegisterTwo")
+  },
+  {
+    path: "/account",
+    component: Account,
+    children: [
+      {
+        path: '/demo',
+        component: lazyLoad("RegisterTwo")
+      }
+    ]
   }
 ];
 

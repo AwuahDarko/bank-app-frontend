@@ -194,7 +194,7 @@ select {
 input[type='text']::placeholder,
 input[type='email']::placeholder,
 input[type='date']::placeholder,
-input[type='number']::placeholder {
+input[type='number']::placeholder,select  {
     font-size: 0.9rem;
     color: rgb(167, 165, 165);
 }
