@@ -13,7 +13,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css"
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // ? === views ====== 
-import Home from "../views/Home.vue";
+// import Home from "../views/Home.vue";
 import Account from '../views/Account.vue'
 
 Vue.use(VueRouter);
@@ -98,12 +98,16 @@ const routes = [
     component: lazyLoad("RegisterTwo")
   },
   {
-    path: "/account",
+    path: "",
     component: Account,
     children: [
       {
-        path: '/demo',
-        component: lazyLoad("RegisterTwo")
+        path: '/account/profile',
+        component: lazyLoad("Profile")
+      },
+      {
+        path: '/account/change-pin',
+        component: lazyLoad("ChangePin")
       }
     ]
   }

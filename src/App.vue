@@ -28,6 +28,11 @@ export default {
 
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
 
+:root{
+    --bk-gray: #F4F3F3;
+    --bk-deep-gray: #ecebeb;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -332,6 +337,26 @@ body {
 
 .dropdown {
     margin: 0 !important;
+}
+
+.bread-item {
+    font-size: 0.7rem;
+    color: #c0c0c0;
+    cursor: pointer;
+}
+
+.bread-item:hover {
+    color: #000;
+}
+
+.small-icon {
+    font-size: 0.6rem;
+    color: #c0c0c0;
+    margin-top: 4px;
+}
+
+.small-gap {
+    gap: 5px;
 }
 
 </style>

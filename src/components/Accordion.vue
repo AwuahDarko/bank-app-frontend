@@ -8,9 +8,8 @@
         <hr>
         <ul class="li-con" ref="person" @click="onAction('person')">
             <p class="li-head">PERSONAL SETTINGS <i class="fa fa-plus icon" ref="ic_p"></i> </p>
-            <li class="li-item"><a href="#">View Profile</a></li>
-            <li class="li-item"><a href="#">Create a new login ID</a></li>
-            <li class="li-item"><a href="#">Change your PIN</a></li>
+            <li class="li-item"><router-link to="/account/profile" >View Profile</router-link></li>
+            <li class="li-item"><router-link to="/account/change-pin">Change your PIN</router-link></li>
         </ul>
         <hr>
         <ul class="li-con" ref="account" @click="onAction('account')">
@@ -63,7 +62,7 @@ export default {
                     this.$refs.ic_p.classList.remove('fa-minus')
                     this.personal_folded = !this.personal_folded;
                 } else {
-                    this.$refs.person.style.height = "100px";
+                    this.$refs.person.style.height = "75px";
                     this.$refs.ic_p.classList.remove('fa-plus')
                     this.$refs.ic_p.classList.add('fa-minus')
                     this.personal_folded = !this.personal_folded;
@@ -112,6 +111,10 @@ export default {
 
             this.$refs.ic_p.classList.add('fa-plus')
             this.$refs.ic_p.classList.remove('fa-minus')
+
+            this.personal_folded = true,
+            this.account_folded = true,
+            this.online_folded = true
         }
     },
 
@@ -216,6 +219,6 @@ ul {
     font-size: 0.3rem;
     position: absolute;
     top: 5px;
-    right: 5px
+    right: 2px
 }
 </style>

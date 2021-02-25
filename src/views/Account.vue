@@ -9,7 +9,7 @@
                     <a class="dropdown-toggle"> My Account </a>
                     <div slot="dropdown">
                         <a class="dropdown-item" href="#">My Account</a>
-                        <a class="dropdown-item" href="#">Change Login PIN</a>
+                        <router-link to="/account/change-pin" class="dropdown-item">Change Login PIN</router-link>
                         <a class="dropdown-item" href="#">Log Out</a>
                     </div>
                 </dropdown-menu>
@@ -20,8 +20,8 @@
             <div class="dropdown">
                 <button class="dropbtn">Personal Settings</button>
                 <div class="dropdown-content">
-                    <a href="#">View Profile</a>
-                    <a href="#">Change User Pin</a>
+                    <router-link to="/account/profile">View Profile</router-link>
+                    <router-link to="/account/change-pin">Change User Pin</router-link>
                 </div>
             </div>
             <div class="dropdown">
@@ -48,7 +48,7 @@
                     <p class="menu-label bg-light">Personal Settings</p>
                     <div class="card p-2">
                         <ul>
-                            <li class="mob-menu-item"><a href="#">View Profile</a></li>
+                            <li class="mob-menu-item"><router-link to="/account/profile">View Profile</router-link></li>
                             <li class="mob-menu-item"><a href="#">Change User PIN</a></li>
                         </ul>
                     </div>
@@ -78,14 +78,8 @@
                 <Accordion />
             </div>
             <div class="content bk-col">
-                <div class="bk-breadcrumb mb-1">
-                    <div class="bk-row small-gap">
-                        <small class="bread-item">Profile</small> <i class="fa small-icon fa-angle-double-right"></i>
-                        <small class="bread-item">Account Profile</small>
-                    </div>
-                </div>
                 <div class="actual-content">
-
+                    <router-view></router-view>
                 </div>
             </div>
         </div>
@@ -243,12 +237,13 @@ a {
     background-color: #1a2c3a;
     border-radius: 5px;
     position: relative;
+    transition: font-size 0.7s
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #1a2c3a;
-    font-size: 13px;
+    font-size: 13.2px;
 }
 
 /* Show the dropdown menu on hover */
@@ -320,33 +315,12 @@ a {
 
 .content {
     width: 90%;
-    margin: 10px 20px;
-}
-
-.bread-item{
-    font-size: 0.7rem;
-    color: #c0c0c0;
-    cursor: pointer;
-}
-
-.bread-item:hover{
-    color: #000;
-}
-
-.small-icon{
-    font-size: 0.6rem;
-    color: #c0c0c0;
-    margin-top: 4px;
-}
-
-.small-gap{
-    gap: 5px;
+    margin: 10px 0px 20px 10px;
 }
 
 .actual-content{
     width: 100%;
-    background-color: red;
-    height: 400px;
+    height: fit-content;
 }
 
 footer{
