@@ -28,7 +28,7 @@
                 <button class="dropbtn">Account Management</button>
                 <div class="dropdown-content">
                     <router-link to="/account/online-statement">Online Statment</router-link>
-                    <a href="#">Check Balance</a>
+                    <router-link to="/account/check-balance">Check Balance</router-link>
                 </div>
             </div>
             <div class="dropdown">
@@ -49,7 +49,7 @@
                     <div class="card p-2">
                         <ul>
                             <li class="mob-menu-item"><router-link to="/account/profile">View Profile</router-link></li>
-                            <li class="mob-menu-item"><a href="#">Change User PIN</a></li>
+                            <li class="mob-menu-item"><router-link to="/account/change-pin" href="#">Change User PIN</router-link></li>
                         </ul>
                     </div>
                 </a>
@@ -58,7 +58,7 @@
                     <div class="card p-2">
                         <ul>
                             <li class="mob-menu-item"><router-link to="/account/online-statement">Online Statements</router-link></li>
-                            <li class="mob-menu-item"><a href="#">Check Balance</a></li>
+                            <li class="mob-menu-item"><router-link to="/account/check-balance">Check Balance</router-link></li>
                         </ul>
                     </div>
                 </a>

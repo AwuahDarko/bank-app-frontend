@@ -14,8 +14,8 @@
         <hr>
         <ul class="li-con" ref="account" @click="onAction('account')">
             <p class="li-head">ACCOUNT MANAGEMENT <i class="fa fa-plus icon" ref="ic_a"></i> </p>
-            <li class="li-item"><a href="#">Online Statements</a></li>
-            <li class="li-item"><a href="#">Check Balance</a></li>
+            <li class="li-item"><router-link to="/account/online-statement">Online Statements</router-link></li>
+            <li class="li-item"><router-link to="/account/check-balance">Check Balance</router-link></li>
         </ul>
         <hr>
         <ul class="li-con" ref="online" @click="onAction('online')">

@@ -112,6 +112,10 @@ const routes = [
       {
         path: '/account/online-statement',
         component: lazyLoad("OnlineStatement")
+      },
+      {
+        path: '/account/check-balance',
+        component: lazyLoad("CheckBalance")
       }
     ]
   }
