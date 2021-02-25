@@ -108,6 +108,10 @@ const routes = [
       {
         path: '/account/change-pin',
         component: lazyLoad("ChangePin")
+      },
+      {
+        path: '/account/online-statement',
+        component: lazyLoad("OnlineStatement")
       }
     ]
   }

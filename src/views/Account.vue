@@ -27,7 +27,7 @@
             <div class="dropdown">
                 <button class="dropbtn">Account Management</button>
                 <div class="dropdown-content">
-                    <a href="#">Online Statment</a>
+                    <router-link to="/account/online-statement">Online Statment</router-link>
                     <a href="#">Check Balance</a>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <p class="menu-label bg-light">Account Management</p>
                     <div class="card p-2">
                         <ul>
-                            <li class="mob-menu-item"><a href="#">Online Statements</a></li>
+                            <li class="mob-menu-item"><router-link to="/account/online-statement">Online Statements</router-link></li>
                             <li class="mob-menu-item"><a href="#">Check Balance</a></li>
                         </ul>
                     </div>

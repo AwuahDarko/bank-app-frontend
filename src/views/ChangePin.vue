@@ -92,10 +92,6 @@ hr {
     margin-left: 10px;
 }
 
-.space {
-    height: 200px;
-}
-
 label{
     font-size: 0.8rem;
     margin-bottom: 0;
@@ -134,9 +130,5 @@ input[type='submit']{
     transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-    .space {
-        height: 50px;
-    }
-}
+
 </style>
