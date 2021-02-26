@@ -414,6 +414,7 @@ table {
     height: 200px;
 }
 
+
 @media screen and (max-width: 768px) {
     .space {
         height: 50px;

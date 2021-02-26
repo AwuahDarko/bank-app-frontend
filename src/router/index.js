@@ -116,7 +116,27 @@ const routes = [
       {
         path: '/account/check-balance',
         component: lazyLoad("CheckBalance")
-      }
+      },
+      {
+        path: '/account/wire-transfer',
+        component: lazyLoad("WireTransfer")
+      },
+      {
+        path: '/account/internal-transfer',
+        component: lazyLoad("InternalTransfer")
+      },
+      {
+        path: '/account/dashboard',
+        component: lazyLoad("Dashboard")
+      },
+      {
+        path: '/account/transfer-summary',
+        component: lazyLoad("TransferSummary")
+      },
+      {
+        path: '/account/confirm-cot',
+        component: lazyLoad("ConfirmCot")
+      },
     ]
   }
 ];

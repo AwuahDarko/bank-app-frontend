@@ -8,7 +8,7 @@
                 <dropdown-menu v-model="show" :right="right" :hover="hover" :interactive="interactive">
                     <a class="dropdown-toggle"> My Account </a>
                     <div slot="dropdown">
-                        <a class="dropdown-item" href="#">My Account</a>
+                        <router-link to="/account/dashboard" class="dropdown-item">My Account</router-link>
                         <router-link to="/account/change-pin" class="dropdown-item">Change Login PIN</router-link>
                         <a class="dropdown-item" href="#">Log Out</a>
                     </div>
@@ -27,15 +27,15 @@
             <div class="dropdown">
                 <button class="dropbtn">Account Management</button>
                 <div class="dropdown-content">
-                    <router-link to="/account/online-statement">Online Statment</router-link>
+                    <router-link to="/account/online-statement">Online Statement</router-link>
                     <router-link to="/account/check-balance">Check Balance</router-link>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Online Money Transfer</button>
                 <div class="dropdown-content">
-                    <a href="#">Wire Transfers</a>
-                    <a href="#">Internal Transfers</a>
+                    <router-link to="/account/wire-transfer">Wire Transfers</router-link>
+                    <router-link to="/account/internal-transfer">Internal Transfers</router-link>
                 </div>
             </div>
         </div>
@@ -48,8 +48,12 @@
                     <p class="menu-label bg-light">Personal Settings</p>
                     <div class="card p-2">
                         <ul>
-                            <li class="mob-menu-item"><router-link to="/account/profile">View Profile</router-link></li>
-                            <li class="mob-menu-item"><router-link to="/account/change-pin" href="#">Change User PIN</router-link></li>
+                            <li class="mob-menu-item">
+                                <router-link to="/account/profile">View Profile</router-link>
+                            </li>
+                            <li class="mob-menu-item">
+                                <router-link to="/account/change-pin">Change User PIN</router-link>
+                            </li>
                         </ul>
                     </div>
                 </a>
@@ -57,8 +61,12 @@
                     <p class="menu-label bg-light">Account Management</p>
                     <div class="card p-2">
                         <ul>
-                            <li class="mob-menu-item"><router-link to="/account/online-statement">Online Statements</router-link></li>
-                            <li class="mob-menu-item"><router-link to="/account/check-balance">Check Balance</router-link></li>
+                            <li class="mob-menu-item">
+                                <router-link to="/account/online-statement">Online Statements</router-link>
+                            </li>
+                            <li class="mob-menu-item">
+                                <router-link to="/account/check-balance">Check Balance</router-link>
+                            </li>
                         </ul>
                     </div>
                 </a>
@@ -66,8 +74,12 @@
                     <p class="menu-label bg-light">Online Money Transfer</p>
                     <div class="card p-2">
                         <ul>
-                            <li class="mob-menu-item"><a href="#">Wire Transfers</a></li>
-                            <li class="mob-menu-item"><a href="#">Internal Transfers</a></li>
+                            <li class="mob-menu-item">
+                                <router-link to="/account/wire-transfer">Wire Transfers</router-link>
+                            </li>
+                            <li class="mob-menu-item">
+                                <router-link to="/account/internal-transfer">Internal Transfers</router-link>
+                            </li>
                         </ul>
                     </div>
                 </a>
@@ -84,10 +96,10 @@
             </div>
         </div>
     </div>
-        <footer>
-            <hr>
-            <p class="text-light">© {{ getYear() }} MYBANK Internet Banking All right reserved.</p>
-        </footer>
+    <footer>
+        <hr>
+        <p class="text-light">© {{ getYear() }} <span class="bk-name">MYBANK Internet Banking </span> All right reserved.</p>
+    </footer>
 </section>
 </template>
 
@@ -120,7 +132,7 @@ export default {
             }
         },
 
-        getYear(){
+        getYear() {
             const d = new Date();
             return d.getFullYear();
         }
@@ -318,21 +330,25 @@ a {
     margin: 10px 0px 20px 10px;
 }
 
-.actual-content{
+.actual-content {
     width: 100%;
     height: fit-content;
 }
 
-footer{
+footer {
     width: 100%;
     height: 70px;
     background-color: #1a2c3a;
     border-radius: 0 0 5px 5px;
-    padding: 10px 1rem;
+    padding: 10px 1rem 5rem 1rem;
 }
 
-hr{
+hr {
     border-color: #fff;
+}
+
+.bk-name{
+    color: #777;
 }
 
 @media screen and (max-width: 1200px) {
@@ -368,8 +384,8 @@ hr{
     .content {
         width: 100%;
     }
-    
-    .sidebar{
+
+    .sidebar {
         display: none;
     }
 }

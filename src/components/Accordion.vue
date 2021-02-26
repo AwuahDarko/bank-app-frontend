@@ -4,7 +4,7 @@
         <h6 class="accordion-head">ACCOUNT MENU</h6>
     </div>
     <div class="accordion-content">
-        <p class="dash-b">DASHBOARD</p>
+        <p class="dash-b"> <router-link to="/account/dashboard">DASHBOARD</router-link> </p>
         <hr>
         <ul class="li-con" ref="person" @click="onAction('person')">
             <p class="li-head">PERSONAL SETTINGS <i class="fa fa-plus icon" ref="ic_p"></i> </p>
@@ -20,8 +20,8 @@
         <hr>
         <ul class="li-con" ref="online" @click="onAction('online')">
             <p class="li-head">ONLINE MONEY TRANSFER <i class="fa fa-plus icon" ref="ic_o"></i> </p>
-            <li class="li-item"><a href="#">Wire Transfers</a></li>
-            <li class="li-item"><a href="#">Internal Transfers</a></li>
+            <li class="li-item"><router-link to="/account/wire-transfer">Wire Transfers</router-link></li>
+            <li class="li-item"><router-link to="/account/internal-transfer">Internal Transfers</router-link></li>
         </ul>
     </div>
 </div>
@@ -112,9 +112,9 @@ export default {
             this.$refs.ic_p.classList.add('fa-plus')
             this.$refs.ic_p.classList.remove('fa-minus')
 
-            this.personal_folded = true,
-            this.account_folded = true,
-            this.online_folded = true
+            // this.personal_folded = true
+            // this.account_folded = true
+            // this.online_folded = true
         }
     },
 
@@ -151,6 +151,14 @@ export default {
     padding-left: 5px;
 }
 
+.dash-b a{
+    font-weight: lighter;
+}
+
+.dash-b a:hover{
+    background-color: rgb(238, 235, 235);
+}
+
 hr {
     margin: 2px 0;
     border-color: rgb(243, 239, 239);
@@ -163,8 +171,8 @@ hr {
 
 .li-head {
     padding-left: 5px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.75rem;
+    /* font-weight: bold; */
 }
 
 .li-item {

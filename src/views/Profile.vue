@@ -42,9 +42,7 @@
             <td class="right-b">Male@hshs.cmj</td>
         </tr>
     </table>
-    <div class="head-container">
-        <h6 class="a-head a-head-2">SECURITY INFORMATION</h6>
-    </div>
+    
     <SecurityInfo />
 </div>
 </template>

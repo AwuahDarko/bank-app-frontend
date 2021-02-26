@@ -1,4 +1,8 @@
 <template>
+<div>
+    <div class="head-container">
+        <h6 class="a-head a-head-2">SECURITY INFORMATION</h6>
+    </div>
 <div class="mt-4">
     <!-- Tab links -->
     <div class="tab">
@@ -51,6 +55,7 @@
             <input type="submit" value="Send">
         </form>
     </div>
+</div>
 </div>
 </template>
 

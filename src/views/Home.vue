@@ -552,8 +552,10 @@ export default {
             this.$refs.snackbar.info(message);
         },
 
-        goToRegister(){
-          this.$router.push({ name: 'RegisterOne'});
+        goToRegister() {
+            this.$router.push({
+                name: 'RegisterOne'
+            });
         }
     },
     created() {},
