@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import Snackbar from './modules/snackbar';
+import UserData from './modules/userdata';
 
 
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     Snackbar,
+    UserData
   }
 });

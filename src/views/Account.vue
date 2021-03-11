@@ -249,7 +249,7 @@ a {
     background-color: #1a2c3a;
     border-radius: 5px;
     position: relative;
-    transition: font-size 0.7s
+    transition: font-size 0.3s
 }
 
 /* Change color of dropdown links on hover */

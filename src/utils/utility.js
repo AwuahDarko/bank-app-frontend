@@ -27,4 +27,8 @@ export class Utility {
         }
     }
 
+    static snackbarPosition = "top-right";
+    static snackbarHoldTime = 5000;
+    static snacbarBaseSize = "100px";
+
 }

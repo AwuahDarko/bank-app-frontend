@@ -482,6 +482,7 @@ import {
 } from "../utils/network";
 import SignIn from "../components/SignIn.vue";
 import Snackbar from "vuejs-snackbar";
+import { mapActions } from "vuex";
 
 // setTitleMethod('title')
 //  vue.$refs.snackbar.error('Error function triggered')
@@ -520,6 +521,8 @@ export default {
     },
 
     methods: {
+         ...mapActions(["setUserData"]),
+
         slideNext() {
             this.$refs.carousel.next();
         },
@@ -538,6 +541,7 @@ export default {
                 .then((data) => {
                     if (data.status == 208) {
                         this.is_logged_in = true;
+                        this.setUserData(data.data.data);
                     } else {
                         this.is_logged_in = false;
                     }

@@ -43,6 +43,8 @@
 <script>
 import { Utility } from "../utils/utility";
 import { network } from "../utils/network";
+import { mapActions } from "vuex";
+
 
 export default {
   name: "SignIn",
@@ -60,9 +62,10 @@ export default {
     };
   },
   methods: {
+     ...mapActions(["setUserData"]),
+
     onFormSubmit(evt) {
       evt.preventDefault();
-      console.log(this.pin, this.user_id);
 
       const body = {
         user_id: this.user_id,
@@ -77,7 +80,7 @@ export default {
           this.$emit("onMessage", res.data.message);
           this.loading = false;
           this.disable_btn = false;
-          
+          this.setUserData(res.data.data);
         })
         .catch((err) => {
           console.log(err);

@@ -21,7 +21,7 @@ Vue.use(VueRouter);
 const options = {
   color: "#00BFFF",
   failedColor: "#874b4b",
-  thickness: "4px",
+  thickness: "5px",
   transition: {
     speed: "0.2s",
     opacity: "0.6s",

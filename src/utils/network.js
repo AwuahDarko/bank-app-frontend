@@ -56,7 +56,7 @@ export class Network {
                     return response;
                 })
                 .then((data) => {
-                    console.log('data', data);
+                    // console.log('data', data);
                     resolve(data);
                 })
                 .catch((err) => {
@@ -87,7 +87,7 @@ export class Network {
                     return response;
                 })
                 .then((data) => {
-                    console.log('data', data);
+                    // console.log('data', data);
                     resolve(data);
                 })
                 .catch((err) => {
